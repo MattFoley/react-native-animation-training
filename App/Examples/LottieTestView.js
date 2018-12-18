@@ -7,14 +7,22 @@ import {
   Text,
   SafeAreaView,
   TouchableOpacity,
+  StyleSheet,
 } from 'react-native';
 
-import styles from './styles';
 
-export default class AnimatableTestView extends Component {
+import styles from './styles';
+import trophy from './trophy.json'; // Found at lottiefiles.com
+import LottieAnimation from 'lottie-react-native';
+
+
+export default class LottieTestView extends Component {
+  storeAnimationRef = (ref) => {
+    this.trophyRef = ref
+  };
 
   animateMe = () => {
-
+    this.trophyRef.play();
   }
 
   render() {
@@ -30,6 +38,10 @@ export default class AnimatableTestView extends Component {
             </View>
           </TouchableOpacity>
         </View>
+        <LottieAnimation ref={this.storeAnimationRef}
+                    style={{position: 'absolute', bottom: 10, height: 200, width: 300}}
+                    loop={false}
+                    source={trophy}/>
       </SafeAreaView>
     );
   };
