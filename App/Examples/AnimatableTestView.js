@@ -9,12 +9,18 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
+import * as Animatable from 'react-native-animatable';
 import styles from './styles';
 
 export default class AnimatableTestView extends Component {
 
-  animateMe = () => {
+  storeSquareRef = (ref) => {
+    this.squareRef = ref
+  };
 
+  animateMe = () => {
+    // Full list available here: https://github.com/oblador/react-native-animatable
+    this.squareRef.swing(1000);
   }
 
   render() {
@@ -23,11 +29,12 @@ export default class AnimatableTestView extends Component {
         <View style={styles.container}>
           <TouchableOpacity style={[styles.square, { backgroundColor: 'white' }]}
                             onPress={this.animateMe}>
-            <View style={styles.square}>
+            <Animatable.View style={styles.square}
+                             ref={this.storeSquareRef}>
               <Text style={styles.squareText}>
                 {'Tap Me'}
               </Text>
-            </View>
+            </Animatable.View>
           </TouchableOpacity>
         </View>
       </SafeAreaView>
