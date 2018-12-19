@@ -21,5 +21,10 @@
   },
   "jest": {
     "preset": "react-native"
+  },
+  "metro": {
+    "resolver": {
+      "hasteImplModulePath": "./../../../../../haste_resolver.js"
+    }
   }
 }
