@@ -16,10 +16,17 @@
   "devDependencies": {
     "babel-jest": "23.6.0",
     "jest": "23.6.0",
+    "metro": "0.48.5",
     "metro-react-native-babel-preset": "0.48.5",
     "react-test-renderer": "16.6.3"
   },
   "jest": {
     "preset": "react-native"
+  },
+  "metro": {
+    "resolver": {
+      "providesModuleNodeModules": ["../react-native"],
+      "hasteImplModulePath": "./../../../../../haste_resolver.js"
+    }
   }
 }

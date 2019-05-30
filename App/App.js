@@ -25,7 +25,7 @@ import {
   SceneMap
 } from 'react-native-tab-view';
 
-import AnimatableTestView from 'App/Examples/AnimatableTestView.js';
+import AnimatableTestView from 'AnimatableTestView';
 import AnimatedTestView from 'App/Examples/AnimatedTestView.js';
 import LottieTestView from 'App/Examples/LottieTestView.js';
 import LayoutAnimationTestView from 'App/Examples/LayoutAnimationTestView.js';
